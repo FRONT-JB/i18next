@@ -11,3 +11,7 @@
 **scanner, google-spreadsheet**
 
     yarn add -D i18next-scanner google-spreadsheet
+
+**Nodejs Folder Management**
+
+    yarn add mkdirp
