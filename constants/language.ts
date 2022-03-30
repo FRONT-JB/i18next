@@ -7,8 +7,4 @@ const LANGUAGES = {
 const LANGUAGE_LIST = [LANGUAGES.KR, LANGUAGES.US, LANGUAGES.JP, LANGUAGES.CN];
 const LANGUAGE_EXTENTION_LIST = [".js", ".jsx", ".ts", ".tsx", ".vue", ".html"];
 
-module.exports = {
-  LANGUAGES,
-  LANGUAGE_LIST,
-  LANGUAGE_EXTENTION_LIST,
-};
+export { LANGUAGES, LANGUAGE_LIST, LANGUAGE_EXTENTION_LIST };

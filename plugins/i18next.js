@@ -1,16 +1,12 @@
 import i18next from "i18next";
-import ko_KR from "../translate/assets/locales/ko-KR/translation.json";
-import en_US from "../translate/assets/locales/en-US/translation.json";
-import ja_JP from "../translate/assets/locales/ja-JP/translation.json";
-import zh_CN from "../translate/assets/locales/zh-CN/translation.json";
-import { LANGUAGES } from "../translate/constants";
+import ko_KR from "i18n/locales/ko-KR/translation.json";
+import en_US from "i18n/locales/en-US/translation.json";
+import ja_JP from "i18n/locales/ja-JP/translation.json";
+import zh_CN from "i18n/locales/zh-CN/translation.json";
+import { LANGUAGES } from "translate/constants";
 
-/**
- * Must add new language here
- * @param lng {Language} language
- * @returns {Object} json resource
- */
 function loadResource(lng) {
+  console.log(lng);
   let module;
 
   switch (lng) {
@@ -61,8 +57,6 @@ export function initializeI18next(lng = LANGUAGES.KR) {
       suffix: "}",
     },
     parseMissingKeyHandler(key) {
-      /* eslint-disable-next-line no-console */
-      console.warn("parseMissingKeyHandler", `'key': '${key}'`);
       const keySeparator = "~~";
       const value = key.includes(keySeparator)
         ? key.split(keySeparator)[1]

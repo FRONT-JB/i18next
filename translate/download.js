@@ -10,25 +10,6 @@ const {
   NOT_AVAILABLE_CELL,
 } = require("./index");
 
-/**
- * fetch translations from google spread sheet and transform to json
- * @param {GoogleSpreadsheet} doc GoogleSpreadsheet document
- * @returns [object] translation map
- * {
- *   "ko-KR": {
- *     "key": "value"
- *   },
- *   "en-US": {
- *     "key": "value"
- *   },
- *   "ja-JP": {
- *     "key": "value"
- *   },
- *   "zh-CN": {
- *     "key": "value"
- *   },
- * }
- */
 async function fetchTranslationsFromSheetToJson(doc) {
   const sheet = doc.sheetsById[sheetId];
   if (!sheet) {
@@ -37,7 +18,6 @@ async function fetchTranslationsFromSheetToJson(doc) {
 
   const lngsMap = {};
   const rows = await sheet.getRows();
-
   rows.forEach((row) => {
     const key = row[columnKeyToHeader.key];
     lngs.forEach((lng) => {
@@ -78,17 +58,12 @@ async function checkAndMakeLocaleDir(dirPath, subDirs) {
 
 async function updateJsonFromSheet() {
   await checkAndMakeLocaleDir(localesPath, lngs);
-  console.log(
-    "updateJsonFromSheet",
-    await checkAndMakeLocaleDir(localesPath, lngs)
-  );
 
   const doc = await loadSpreadsheet();
   const lngsMap = await fetchTranslationsFromSheetToJson(doc);
 
   fs.readdir(localesPath, (error, lngs) => {
     if (error) {
-      console.log("@@rrororororor", err);
       throw error;
     }
 
