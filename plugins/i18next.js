@@ -1,37 +1,27 @@
 import i18next from "i18next";
-import ko_KR from "i18n/locales/ko-KR/translation.json";
-import en_US from "i18n/locales/en-US/translation.json";
-import ja_JP from "i18n/locales/ja-JP/translation.json";
-import zh_CN from "i18n/locales/zh-CN/translation.json";
-import { LANGUAGES } from "translate/constants";
+import ko_KR from "~/i18n/locales/ko-KR/translation.json";
+import en_US from "~/i18n/locales/en-US/translation.json";
+import ja_JP from "~/i18n/locales/ja-JP/translation.json";
+import zh_CN from "~/i18n/locales/zh-CN/translation.json";
 
-function loadResource(lng) {
-  console.log(lng);
-  let module;
-
-  switch (lng) {
-    case LANGUAGES.KR: {
-      module = ko_KR;
-      break;
+const loadResource = (lng) => {
+  switch (true) {
+    case lng === LANGUAGES.KR: {
+      return ko_KR;
     }
-    case LANGUAGES.US: {
-      module = en_US;
-      break;
+    case lng === LANGUAGES.US: {
+      return en_US;
     }
-    case LANGUAGES.JP: {
-      module = ja_JP;
-      break;
+    case lng === LANGUAGES.JP: {
+      return ja_JP;
     }
-    case LANGUAGES.CN: {
-      module = zh_CN;
-      break;
+    case lng === LANGUAGES.CN: {
+      return zh_CN;
     }
     default:
-      break;
+      return ko_KR;
   }
-
-  return module;
-}
+};
 
 function getResources(lngs) {
   const resources = {};

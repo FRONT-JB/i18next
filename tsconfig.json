@@ -1,6 +1,14 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "~/constants/*": ["constants/*"],
+      "~/i18n/*": ["i18n/*"],
+      "~/pages/*": ["pages/*"],
+      "~/public/*": ["public/*"],
+      "~/styles/*": ["styles/*"],
+      "~/translate/*": ["translate/*"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -16,6 +24,16 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "translate/download.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "translate/download.js",
+    "plugins/i18next.js",
+    "translate/constants.js",
+    "translate/index.js",
+    "translate/upload.js",
+    "plugins/i18next.js"
+  ],
   "exclude": ["node_modules"]
 }

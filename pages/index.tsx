@@ -1,8 +1,8 @@
-import i18next from "i18next";
 import type { NextPage } from "next";
+import i18next from "i18next";
 import { MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
-import styles from "../styles/Home.module.css";
+import styles from "~/styles/Home.module.css";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
