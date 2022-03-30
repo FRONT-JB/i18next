@@ -1,5 +1,8 @@
 # [국제화(i18n) 자동화 가이드](https://ui.toast.com/weekly-pick/ko_20210303?fbclid=IwAR0squBMJzSaezvJjV3r8cTnbxQ5ubBmMLnq2xjsnY3PAvAj0fdphgGTz4Y)
 
+<img width="232" alt="image" src="https://user-images.githubusercontent.com/85790271/160847322-c72f500e-c777-4da4-99b3-a6641133e74a.png">
+
+
 **Google Sheet를 이용한 다국어 환경 자동화**
 
 [Example Google Docs](https://docs.google.com/spreadsheets/d/1BV_bfEBuRlgdMPjxQkVfHaZ0EakRIE4XNikpPYPymKs/edit#gid=0)
