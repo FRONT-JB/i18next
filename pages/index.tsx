@@ -6,9 +6,11 @@ import styles from "~/styles/Home.module.css";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
+
   const handleChange = (e: MouseEvent<HTMLButtonElement>) => {
     i18next.changeLanguage(e.currentTarget.name);
   };
+
   return (
     <div className={styles.container}>
       <p>{t("이름")}</p>
