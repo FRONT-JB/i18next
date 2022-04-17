@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import i18next from "i18next";
 import { MouseEvent } from "react";
+import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import styles from "~/styles/Home.module.css";
 
