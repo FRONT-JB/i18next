@@ -2,15 +2,20 @@ const { GoogleSpreadsheet } = require("google-spreadsheet");
 const creds = require("./credential/nsn-i18next-5ed6de111150.json");
 const i18NextConfig = require("../i18next-scanner.config");
 
-// 구글 Docs URL Example : Code Line 35
-
 const documentId = "1BV_bfEBuRlgdMPjxQkVfHaZ0EakRIE4XNikpPYPymKs";
-const ns = "translation";
+
+const nameList = ["common", "landing"];
+
 const lngs = i18NextConfig.options.lngs;
+
 const loadPath = i18NextConfig.options.resource.loadPath;
+
 const localesPath = loadPath.replace("/{{lng}}/{{ns}}.json", "");
+
 const rePluralPostfix = new RegExp(/_plural|_[\d]/g);
-const sheetId = 0;
+
+const sheetIds = [0, 2067171382];
+
 const NOT_AVAILABLE_CELL = "_N/A"; // 없는 값 표기를 어떻게 할지
 
 const columnKeyToHeader = {
@@ -68,9 +73,9 @@ module.exports = {
   localesPath,
   loadSpreadsheet,
   getPureKey,
-  ns,
+  nameList,
   lngs,
-  sheetId,
+  sheetIds,
   columnKeyToHeader,
   NOT_AVAILABLE_CELL,
 };
